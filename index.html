@@ -10,29 +10,35 @@
     <script src="JavaScript/script.js" defer></script> <!--"defer" atributo para os arquivos serem  carregados após o html-->
 </head>
 <body>
+    <div class="header-page">
+        <div>
+            <p>Developed by:</p>
+            <h1>@raphaum_</h1>
+        </div>
+    </div>
     <div class="todo-container">
         <div>
             <header>
                 <h1>Lista de tarefas</h1>
             </header>
-            <form id="todo-form">
+            <form id="todo-form"> <!-- const todoFor -->
                 <p>Adicionar Tarefa</p>
                 <div class="form-control">
-                    <input type="text" id="todo-input" placeholder="O que você vai fazer">
+                    <input type="text" id="todo-input" placeholder="O que você vai fazer"> <!--const todoInput-->
                     <button type="submit">
                         <i class="fa-thin fa-plus"></i>
                     </button>
                 </div>
             </form>
-            <form action="" id="edit-form" class="">
+            <form id="edit-form" class="hide"> <!--const editForm-->
                 <p>Edite sua tarefa:</p>
                 <div class="form-control">
-                    <input type="text" id="edit-input">
+                    <input type="text" id="edit-input"> <!--const editInput-->
                     <button type="submit">
                         <i class="fa-solid fa-check"></i>
                     </button>
                 </div>
-                <button id="cancel-edit-btn">Cancelar</button>
+                <button id="cancel-edit-btn">Cancelar</button> <!--const cancelEditBtn-->
             </form>
             <div class="toolbar">
                 <div class="search">
@@ -54,32 +60,36 @@
                 </div>
             </div>
         </div>
-        <div id="todo-list">
+
+        <!--Lista do que será feito-->
+        <div id="todo-list"> <!--const todoList-->
             <div class="todo">
-                <h3>estou fazendo alguma coisa</h3>
-                <button class="finish-todo">
-                    <i class="fa-solid fa-check"></i>
-                </button>
-                <button class="edit-todo">
-                    <i class="fa-solid fa-pen"></i>
-                </button>
-                <button class="remove-todo">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
+                <h3>estou fazendo alguma coisa em Javascript gostaria de compartilhar com vocês </h3>
+                <section>
+                    <button class="finish-todo">
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+                    <button class="edit-todo">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <button class="remove-todo">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </section>
             </div>
-        </div>
-        <div id="todo-list">
             <div class="todo">
                 <h3>aprender Javascript</h3>
-                <button class="finish-todo">
-                    <i class="fa-solid fa-check"></i>
-                </button>
-                <button class="edit-todo">
-                    <i class="fa-solid fa-pen"></i>
-                </button>
-                <button class="remove-todo">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
+                <section>
+                    <button class="finish-todo">
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+                    <button class="edit-todo">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <button class="remove-todo">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </section>
             </div>
         </div>
     </div>
