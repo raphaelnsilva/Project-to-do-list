@@ -7,23 +7,22 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: gray;
+}
+
 .header-page {
     background: linear-gradient(to bottom, #e66465,  #9198e5);
-    margin: -1px 5px -1px 5px;
-    max-width: 270px;
-    border-radius: 0 0 5px 5px;
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.438);
 }
 
 .header-page > div {
     text-align: center;
-    font-size: 7px;
+    font-size: 15px;
     padding: 10px;
     color: white;
 }
 
-body {
-    background-color: gray;
-}
 
 button {
     background-color: #fdfdfd;
@@ -50,7 +49,7 @@ button:hover > i {
 button i {
     color: #102f5e;
     pointer-events: none;
-    font-size: 15px;
+    font-size: 25px;
 }
 
 input, 
@@ -65,14 +64,16 @@ select {
 /* to do header*/
 
 .todo-container {
-    max-width: 270px;
+    max-width: 463px; /* LARGURA DO CONTAINER */
     margin: 1rem auto; /* modo mais facil de centralizar uma div */
     background-color: white;
     padding: 1.5rem;
     border-radius:15px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.527);
 }
 
 .todo-container header {
+    border-bottom: 1px solid #ccc;
     text-align: center;
     padding: 0 1rem 1rem; 
     font-size: 0.8em;
@@ -81,7 +82,7 @@ select {
 /* To do Form*/
 
 #todo-form, #edit-form {
-    padding: 15px 0px 15px 0px;
+    padding: 20px 0px 20px 0px;
     border-bottom: 1px solid #ccc; /* cria a linha que divide as coisas */
 }
 
@@ -89,7 +90,7 @@ select {
 #edit-form p {
     margin-bottom: 0.5rem; 
     font-weight: bold;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .form-control {
@@ -97,6 +98,7 @@ select {
 }
 
 .form-control input {
+    width: 343px; /* Largura do input */
     margin-right: 0.3rem; /* da um espaço entre o input e o botão. */
 } 
 
@@ -107,7 +109,7 @@ select {
 /* Todo toolbar */ 
 
 .toolbar {
-    padding: 15px 0px 15px 0px;
+    padding: 20px 0px 20px 0px;
     border-bottom: 1px solid #ccc;
     display: flex;
     font-size: 12px;
@@ -115,13 +117,14 @@ select {
 
 .toolbar h4 {
     margin-bottom: 0.5rem;
+    font-size: 18px;
 }
 
 .search {
     border-right: 1px solid #ddd; /* cria a linha na vertical */
     padding-right: 9rem;
     margin-right: 1rem;
-    width: 65%;
+    width: 59%;
     display: flex;
     flex-direction: column;
 }
@@ -132,11 +135,11 @@ select {
 
 .search input {
     margin-right: 0.3rem;
-    width: 88px;
+    width: 169px;
 }
 
 .filter {
-    width: 17%;
+    width: 30%;
     display: flex;
     flex-direction: column;
 }
@@ -149,13 +152,14 @@ select {
 
 .todo {
     align-items: center;
-    padding: 15px 8px 5px 8px;
+    padding: 20px 8px 10px 8px;
     border-bottom: 1px solid #ddd;
     transition: .3s;
 }
 
 .todo h3 {
-    font-size: 10px;   
+    font-size: 15px;  
+    font-style: italic; 
     padding-bottom: 10px; 
 }
 
@@ -173,7 +177,6 @@ section {
     display: flex;
     justify-content: center;
     margin-top: 10px;
-    gap: 2px; /* da o espaçamento entre os botões */
+    gap: 6px; /* da o espaçamento entre os botões */
 }
-
 

@@ -1,7 +1,7 @@
 // Shift + Alt = v (seta pra baixo) você cria varias vezes
 // Quando voce clica em alguma coisa ele te mostra quantos daquele tem, se aperta Ctrl + D pra selecionar eles 
 
-// Selção de elementos
+// SEÇÃO DE ELEMENTOS
 const todoForm = document.querySelector('#todo-form') 
 const todoInput = document.querySelector('#todo-input')
 const todoList = document.querySelector('#todo-list')
@@ -11,7 +11,7 @@ const cancelEditBtn = document.querySelector('#cancel-edit-btn')
 
 let oldInputValue
 
-// Funções
+// FUNÇÕES 
 const saveTodo = (text) => { //diz pro java que estou esperando um texto
     const todo = document.createElement("div") //essa variavel serve para guardar a criação da tag html aqui no js 
     todo.classList.add("todo") //qual a classe da div que vai ser guardada na variavel "todo"
