@@ -51,7 +51,7 @@ const toggleForms = () => { // Arroy Function
     todoList.classList.toggle("hide")
 }
 
-const updateTodo = (text) => { // Arroy Function   
+const updateTodo = (editInputValue) => { // Arroy Function   
     const todos = document.querySelectorAll(".todo") // a variavel "todos" vai receber das as tarefas com classe "todo"
 
     todos.forEach((todo) => { // vai chamar cada "todo" de "todo"
@@ -59,7 +59,7 @@ const updateTodo = (text) => { // Arroy Function
 
         if(todoTitle.innerText === oldInputValue)//seleciona o elemento depois seleciona a propriedade que a gente quer 
         //aqui ele vai comparar se o titulo que estamos alterando é identico ao titulo já alterado
-        todoTitle.innerText = text // se o valor for igual, ele vai enviar o mesmo texto que está no parametro 
+        todoTitle.innerText = editInputValue // se o valor for igual, ele vai enviar o mesmo texto que está no parametro 
     })
 }
 
