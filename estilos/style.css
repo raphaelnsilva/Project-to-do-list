@@ -8,7 +8,11 @@
 }
 
 body {
-    background-image: url('bg.jpg');
+   background-image: url('../imagens/bg.jpg');
+   position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
 }
 
 .header-page {
