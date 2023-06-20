@@ -12,11 +12,11 @@ const cancelEditBtn = document.querySelector('#cancel-edit-btn')
 let oldInputValue
 
 // FUNÇÕES 
-const saveTodo = (text) => { //diz pro java que estou esperando um texto
-    const todo = document.createElement("div") //essa variavel serve para guardar a criação da tag html aqui no js 
-    todo.classList.add("todo") //qual a classe da div que vai ser guardada na variavel "todo"
+const saveTodo = (text) => { //o parâmetro "text" é o texto da variavel "inputValue"
+    const todo = document.createElement("div") //cria a tag <div> dentro da variavel "todo"
+    todo.classList.add("todo") //adifiona uma class na tag <div> criada acima 
 
-    const todoTitle = document.createElement("h3") //essa variavel serve para guardar a criação dos elementos html aqui no js 
+    const todoTitle = document.createElement("h3") //cria a tag <h3> dentro da variavel "todoTitle"
     todoTitle.innerText = text //vai inserir o texto que vem da função saveTodo que tem o paramentro de Text
     todo.appendChild(todoTitle) //vai inserir o texto que esta dentro da variavel todoTitle
     //console.log(todo) //para testar, vai mostrar no cosole a div com o texto dentro
@@ -69,14 +69,12 @@ todoForm.addEventListener('submit', (e) => { //serve para testar eventos do <but
     e.preventDefault() //não deixa o formulario ser enviado para o back end.
     //console.log('Enviou form')  //para testar no console do navegador 
 
-    const inputValue = todoInput.value //essa variavel quarda o valor do todo Input 
+    const inputValue = todoInput.value //essa variavel guarda o valor do todo Input 
     
     if(inputValue) { // VALIDAÇÃO, para que o usuario não crie a tarefa sem titulo 
         //console.log(inputValue) //para testar se o valor do input está indo para o console 
         saveTodo(inputValue) //função que salva o valor do Input value
     }
-
-
 })
 
 document.addEventListener("click", (e) =>{

@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: gray;
+    background-image: url('bg.jpg');
 }
 
 .header-page {
@@ -64,8 +64,11 @@ select {
 /* to do header*/
 
 .todo-container {
-    max-width: 463px; /* LARGURA DO CONTAINER */
-    margin: 1rem auto; /* modo mais facil de centralizar uma div */
+    max-width: 470px; /* LARGURA DO CONTAINER */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: white;
     padding: 1.5rem;
     border-radius:15px;
@@ -98,8 +101,9 @@ select {
 }
 
 .form-control input {
-    width: 343px; /* Largura do input */
+    width: 300px; /* Largura do input */
     margin-right: 0.3rem; /* da um espaço entre o input e o botão. */
+    padding-left: 5px;
 } 
 
 #cancel-edit-btn {
