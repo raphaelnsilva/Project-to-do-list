@@ -10,12 +10,7 @@
     <script src="JavaScript/script.js" defer></script> <!--"defer" atributo para os arquivos serem  carregados após o html-->
 </head>
 <body>
-    <div class="header-page">
-        <div>
-            <p>Developed by:</p>
-            <h1>@raphaum_</h1>
-        </div>
-    </div>
+
     <div class="todo-container">
         <div>
             <header>
@@ -24,13 +19,15 @@
             <form id="todo-form"> <!-- const todoFor -->
                 <p>Adicionar Tarefa</p>
                 <div class="form-control">
-                    <input type="text" id="todo-input" placeholder="O que você vai fazer..."> <!--const todoInput-->
+                    <input type="text" id="todo-input" placeholder="O que você vai fazer...">
                     <button type="submit">
                         <i class="fa-thin fa-plus"></i>
                     </button>
                 </div>
             </form>
-            <form id="edit-form" class="hide"> <!--const editForm-->
+
+            <!--Formulario editado-->
+            <form id="edit-form" class="hide"> 
                 <p>Edite sua tarefa:</p>
                 <div class="form-control">
                     <input type="text" id="edit-input"> <!--const editInput-->
@@ -40,6 +37,8 @@
                 </div>
                 <button id="cancel-edit-btn">Cancelar</button> <!--const cancelEditBtn-->
             </form>
+
+            <!--Ferramentas -->
             <div class="toolbar">
                 <div class="search">
                     <h4>Pesquisar:</h4>
@@ -61,9 +60,9 @@
             </div>
         </div>
 
-        <!--Lista do que será feito-->
-        <div id="todo-list"> <!--const todoList-->
-            <div class="todo">
+        <!--Lista de tarefas-->
+        <div id="todo-list"> 
+         <!--<div class="todo">
                 <h3>Tarefa Teste </h3>
                 <section>
                     <button class="finish-todo">
@@ -74,8 +73,8 @@
                     </button>
                     <button class="remove-todo">
                         <i class="fa-solid fa-xmark"></i>
-                    </button>
-                </section>
+                    </button> 
+                </section> -->
             </div>
         </div>
     </div>

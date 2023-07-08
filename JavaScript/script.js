@@ -2,44 +2,47 @@
 // Quando voce clica em alguma coisa ele te mostra quantos daquele tem, se aperta Ctrl + D pra selecionar eles 
 
 // SEÇÃO DE ELEMENTOS
-const todoForm = document.querySelector('#todo-form') 
-const todoInput = document.querySelector('#todo-input')
-const todoList = document.querySelector('#todo-list')
-const editForm = document.querySelector('#edit-form')
-const editInput = document.querySelector('#edit-input')
-const cancelEditBtn = document.querySelector('#cancel-edit-btn') 
+let todoForm = document.querySelector('#todo-form');
+let todoInput = document.querySelector('#todo-input');
+let todoList = document.querySelector('#todo-list');
+let editForm = document.querySelector('#edit-form');
+let editInput = document.querySelector('#edit-input');
+let cancelEditBtn = document.querySelector('#cancel-edit-btn'); 
 
-let oldInputValue
+let oldInputValue;
 
 // FUNÇÕES 
-const saveTodo = (text) => { //o parâmetro "text" é o texto da variavel "inputValue"
-    const todo = document.createElement("div") //cria a tag <div> dentro da variavel "todo"
-    todo.classList.add("todo") //adifiona uma class na tag <div> criada acima 
 
-    const todoTitle = document.createElement("h3") //cria a tag <h3> dentro da variavel "todoTitle"
-    todoTitle.innerText = text //vai inserir o texto que vem da função saveTodo que tem o paramentro de Text
-    todo.appendChild(todoTitle) //vai inserir o texto que esta dentro da variavel todoTitle
+const saveTodo = (text) => { //o parâmetro "text" é o texto da variavel "inputValue"
+
+    const todo = document.createElement("div"); //cria a tag <div> dentro da variavel "todo"
+    todo.classList.add("todo"); //adiciona uma class na tag <div> criada acima 
+
+    const todoTitle = document.createElement("h3"); //cria a tag <h3> dentro da variavel "todoTitle"
+    todoTitle.innerText = text; //vai inserir o texto que vem da função saveTodo que tem o paramentro de Text
+    todo.appendChild(todoTitle); //vai inserir o texto que esta dentro da variavel todoTitle
     //console.log(todo) //para testar, vai mostrar no cosole a div com o texto dentro
 
-    const div = document.createElement("section")
-    todo.appendChild(div)
+    const todoSection = document.createElement("section")
+    todo.appendChild(todoSection)
 
     const doneBtn = document.createElement("button") //cria a tag html dentro da variavel 
     doneBtn.classList.add("finish-todo") //diz qual é a classe do button 
-    doneBtn.innerHTML = '<i class="fa-solid fa-check"></i>' //adiciona o icone. tem que usar ASPAS SIMPLES
-    div.appendChild(doneBtn) //adiciona a variavel doneBtn a variavel todo
+    doneBtn.innerHTML = '<i class="fa-solid fa-check"></i>' //Usar ASPAS SIMPLES
+    todoSection.appendChild(doneBtn) //adiciona a variavel doneBtn a variavel todo
     
     const editBtn = document.createElement("button")
     editBtn.classList.add("edit-todo")
     editBtn.innerHTML = '<i class="fa-solid fa-pen"></i>'
-    div.appendChild(editBtn)
+    todoSection.appendChild(editBtn)
 
     const removeBtn = document.createElement("button")
     removeBtn.classList.add("remove-todo")
     removeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>'
-    div.appendChild(removeBtn)
+    todoSection.appendChild(removeBtn)
 
     todoList.appendChild(todo) //colocou todo a variavel "todo" dentro da variavel "todoList"
+    console.log(todoList)
 
     todoInput.value = "" // vai limpar o Input apos adicionar a tarefa
     todoInput.focus() //vai focar o cursor na caixa do input
@@ -52,28 +55,27 @@ const toggleForms = () => { // Arroy Function
 }
 
 const updateTodo = (editInputValue) => { // Arroy Function   
-    const todos = document.querySelectorAll(".todo") // a variavel "todos" vai receber das as tarefas com classe "todo"
+    const todos = document.querySelectorAll("#todo-list") 
 
-    todos.forEach((todo) => { // vai chamar cada "todo" de "todo"
-        let todoTitle = todo.querySelector("h3") //jogou o titulo do h3 pra dentro da variavel todoTitle 
+    todos.forEach((todo) => { // vai chamar cada "todo" de "todos"
+        let todoTitle = todo.querySelector("h3") //jogou o titulo do h3 pra dentro da variavel
 
-        if(todoTitle.innerText === oldInputValue)//seleciona o elemento depois seleciona a propriedade que a gente quer 
-        //aqui ele vai comparar se o titulo que estamos alterando é identico ao titulo já alterado
+        if(todoTitle.innerText === oldInputValue)
+
         todoTitle.innerText = editInputValue // se o valor for igual, ele vai enviar o mesmo texto que está no parametro 
     })
 }
 
 
 // Eventos
-todoForm.addEventListener('submit', (e) => { //serve para testar eventos do <button type = "submit">
-    e.preventDefault() //não deixa o formulario ser enviado para o back end.
-    //console.log('Enviou form')  //para testar no console do navegador 
-
-    const inputValue = todoInput.value //essa variavel guarda o valor do todo Input 
+todoForm.addEventListener('submit', (e) => {
     
-    if(inputValue) { // VALIDAÇÃO, para que o usuario não crie a tarefa sem titulo 
-        //console.log(inputValue) //para testar se o valor do input está indo para o console 
-        saveTodo(inputValue) //função que salva o valor do Input value
+    e.preventDefault() 
+    const inputValue = todoInput.value 
+
+    if(inputValue) { 
+        console.log(inputValue)
+        saveTodo(inputValue)
     }
 })
 
@@ -95,28 +97,29 @@ document.addEventListener("click", (e) =>{
     }
 
     if (targetEl.classList.contains("edit-todo")) {
-        toggleForms() //vai esconder um formulario e mostrar outro 
+        toggleForms(); //vai esconder um formulario e mostrar outro 
 
-        editInput.value = todoTitle // a caixa de texto do edit input vai receber o que esta escrito na variavel parentEl
-        oldInputValue = todoTitle //vai identificar qual é a tarefa pra fazer a alteração, a tarefa alterada ficara-
+        editInput.value = todoTitle; // a caixa de texto do edit input vai receber o que esta escrito na variavel parentEl
+        oldInputValue = todoTitle; //vai identificar qual é a tarefa pra fazer a alteração, a tarefa alterada ficara-
         //armazenada dentro da variavel oldInputValue
     }
 })
 
 cancelEditBtn.addEventListener('click' , (e) => {
-    e.preventDefault() //não deixa o formulario ser enviado para o back-end 
-    toggleForms() //vai mostrar o que está oculto 
-}) 
+    e.preventDefault(); //não deixa o formulario ser enviado para o back-end 
+    toggleForms(); //vai mostrar o que está oculto 
+});
 
 editForm.addEventListener("submit", (e) => {
+    e.preventDefault();  //vai impedir que o formulario seja enviado
 
-    e.preventDefault()//vai impedir que o formulario seja enviado
-
-    const editInputValue = editInput.value //pegar o valor digitado pelo usuario, e coloca dentro da variavel editInputValue
+    const editInputValue = editInput.value; //pegar o valor digitado pelo usuario, e coloca dentro da variavel editInputValue
 
     if(editInputValue) {
         updateTodo(editInputValue) //vai mandar o valor do input
     }
 
     toggleForms()
+
 })
+
